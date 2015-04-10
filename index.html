@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Backup</title>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container">
+    <h1>Form Backup Example</h1>    
+    <div class="row">
+        <form name="formBackup" id="formBackup">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="Name" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" name="Email" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label>User Type</label>
+                    <div class="radio-inline">
+                        <input type="radio" name="Type" value="1" />Admin
+                    </div>
+                    <div class="radio-inline">
+                        <input type="radio" name="Type" value="2" />User
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Subscribe to Emails</label>
+                    <div class="checkbox-inline">
+                        <input type="checkbox" name="Subscribe" value="1" />Subscribe
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Interests</label>
+                    <div class="checkbox-inline">
+                        <input type="checkbox" name="Interests[]" value="cats" />Cats
+                    </div>
+                    <div class="checkbox-inline">
+                        <input type="checkbox" name="Interests[]" value="dogs" />Dogs
+                    </div>
+                    <div class="checkbox-inline">
+                        <input type="checkbox" name="Interests[]" value="birds" />Birds
+                    </div>
+                    <div class="checkbox-inline">
+                        <input type="checkbox" name="Interests[]" value="hedgehogs" />Hedgehogs
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Favorite Car</label>
+                    <select name="Car" class="form-control">
+                        <option value="">--</option>
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Favorite Color(s)</label>
+                    <select name="Colors[]" multiple class="form-control">
+                        <option value="">--</option>
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                        <option value="yellow">Yellow</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Comments</label>
+                    <textarea name="Comments" class="form-control"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"></script>
+<script type="text/javascript">
+    require.config({
+        paths: {
+            'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min'
+        }
+    });
+
+    require(["jquery", "app/jquery.formbackup"], function ($) {
+        $('#formBackup').formBackup();
+    });
+</script>
+</body>
+</html>
