@@ -35,13 +35,15 @@ Options
 | storage      | storage |
 | beforeRestore      | null |
 | afterRestore      | null |
+| beforeSave      | null |
+| afterSave      | null |
 
 
 ##Examples
 
 ###Using a different storage medium
 If you want to use a different storage medium you can create a wrapper object around it that implements the same interface localStorage users.
-```
+```javascript
 var storageObject = {
     data: {},
     setItem: function (key, value) {
@@ -60,7 +62,7 @@ require(["jquery", "app/jquery.formbackup"], function ($) {
 ```
 
 ### Cancel form saving
-```
+```javascript
 require(["jquery", "app/jquery.formbackup"], function ($) {
     $('#formBackup').formBackup({
         beforeSave: function () {
@@ -71,7 +73,7 @@ require(["jquery", "app/jquery.formbackup"], function ($) {
 ```
 
 ###Prompt user to confirm before leaving the page
-```
+```javascript
 require(["jquery", "app/jquery.formbackup"], function ($) {
     $('#formBackup').formBackup({
         afterSave: function () {
@@ -82,7 +84,7 @@ require(["jquery", "app/jquery.formbackup"], function ($) {
 ```
 
 ###Prompt user before restoring
-```
+```javascript
 require(["jquery", "app/jquery.formbackup"], function ($) {
     $('#formBackup').formBackup({
         beforeRestore: function () {
@@ -93,7 +95,7 @@ require(["jquery", "app/jquery.formbackup"], function ($) {
 ```
 
 ###Notify user after restore finishes
-```
+```javascript
 require(["jquery", "app/jquery.formbackup"], function ($) {
     $('#formBackup').formBackup({
         afterRestore: function () {
